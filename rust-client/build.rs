@@ -3,7 +3,6 @@ use std::path::Path;
 
 fn main() {
     // Tell cargo to look for shared libraries in the specified directory
-    // println!("cargo::rustc-link-search=/home/marco/RustroverProjects/rust-ffi/rust-client/libs");
     let rust_client_root = env::var("CARGO_MANIFEST_DIR").unwrap();
     let path_to_lib = Path::new(&rust_client_root).join("../target/release").to_str().unwrap().to_string();
     println!("cargo::rustc-link-search={path_to_lib}/");
